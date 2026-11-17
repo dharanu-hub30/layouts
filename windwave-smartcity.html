@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WindWave – Harnessing Wind Energy for Smart Cities</title>
+  <meta name="description" content="WindWave: how wind energy can power smart cities. A CSS text styles and layouts practicum project.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="windwave-smartcity.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-text">
+      <h1>WindWave</h1>
+      <p class="tagline">Harnessing wind energy for smart cities</p>
+    </div>
+    <svg class="turbine" viewBox="0 0 120 120" role="img" aria-label="Spinning wind turbine">
+      <rect x="57" y="55" width="6" height="62" rx="3" fill="#12343B"/>
+      <g class="blades">
+        <circle cx="60" cy="52" r="6" fill="#12343B"/>
+        <path d="M60 52 L55 6 Q60 0 65 6 Z" fill="#1E6FA8"/>
+        <path d="M60 52 L100 75 Q101 82 94 81 Z" fill="#1E6FA8"/>
+        <path d="M60 52 L20 75 Q19 82 26 81 Z" fill="#1E6FA8"/>
+      </g>
+    </svg>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav aria-label="Page sections">
+        <h2>Contents</h2>
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#smart-cities">In a smart city</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#challenges">Challenges</a></li>
+        </ul>
+      </nav>
+      <p class="side-note"><em>Wind is free, clean and local. The city only has to learn how to catch it.</em></p>
+    </aside>
+
+    <main>
+      <section id="overview">
+        <h2>Overview</h2>
+        <p class="lead">Cities use a huge share of the world’s electricity. WindWave looks at how wind turbines, sensors and smart grids can work together to supply some of that power cleanly.</p>
+        <p>Wind energy turns moving air into electricity. In a <strong>smart city</strong>, that electricity is not simply produced and used. It is measured, forecast and shared in real time, so supply follows demand.</p>
+      </section>
+
+      <section id="how-it-works">
+        <h2>How it works</h2>
+        <p>Moving air turns the blades of a turbine. The blades spin a shaft connected to a generator, and the generator produces electricity. Urban sites often use smaller turbines on rooftops, towers and open corridors, while larger wind farms outside the city feed the same grid.</p>
+        <h3>Key parts</h3>
+        <ul class="parts">
+          <li><b>Blades</b> capture the energy in moving air.</li>
+          <li><b>Generator</b> converts rotation into electricity.</li>
+          <li><b>Sensors</b> track wind speed, output and turbine health.</li>
+          <li><b>Storage</b> holds extra power for calm hours.</li>
+        </ul>
+      </section>
+
+      <section id="smart-cities">
+        <h2>In a smart city</h2>
+        <p>Smart-city software connects turbines to the wider power network. Weather forecasts predict how much wind power will arrive, and the grid adjusts street lighting, charging stations and building loads to match.</p>
+        <blockquote>Good planning lets a city use wind power when it blows and save it for when it does not.</blockquote>
+        <p>Typical uses include street lights, electric-vehicle charging points, metro and bus depots, water pumping and public buildings.</p>
+      </section>
+
+      <section id="benefits">
+        <h2>Benefits</h2>
+        <ul>
+          <li>Produces electricity without burning fuel.</li>
+          <li>Reduces dependence on distant power plants.</li>
+          <li>Lowers running costs once turbines are installed.</li>
+          <li>Pairs well with solar, since wind often blows when the sun does not.</li>
+        </ul>
+      </section>
+
+      <section id="challenges">
+        <h2>Challenges</h2>
+        <p>Cities have buildings that disturb airflow, so wind is gustier than in open country. Noise, safety, space and cost also need careful planning. Smart monitoring, good siting studies and local storage help reduce these problems.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <span>WindWave · CSS Text Styles and Layouts practicum</span>
+    <span>Your name, Roll No.</span>
+  </footer>
+</body>
+</html>

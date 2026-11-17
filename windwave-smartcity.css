@@ -1,0 +1,173 @@
+/* WindWave – CSS text styles and layouts */
+:root {
+  --paper: #EEF4F6;
+  --card: #FFFFFF;
+  --ink: #12343B;
+  --muted: #4F6B72;
+  --blue: #1E6FA8;
+  --gust: #F2B632;
+  --line: #CFDDE1;
+  --heading: "Bricolage Grotesque", "Segoe UI", Arial, sans-serif;
+  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+/* ---------- Header: text styles ---------- */
+.site-header {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.site-header h1 {
+  margin: 0;
+  font-family: var(--heading);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 8vw, 4.5rem);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--ink);
+}
+.tagline {
+  margin: 0.6rem 0 0;
+  font-family: var(--heading);
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--blue);
+}
+.turbine { width: clamp(90px, 18vw, 150px); flex: none; }
+.blades { transform-origin: 60px 52px; animation: spin 8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---------- Layout: sidebar + main (CSS Grid) ---------- */
+.layout {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.sidebar {
+  position: sticky;
+  top: 1rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1.25rem;
+}
+.sidebar h2 {
+  margin: 0 0 0.5rem;
+  font-family: var(--heading);
+  font-size: 1.1rem;
+}
+.sidebar ul { list-style: none; margin: 0; padding: 0; }
+.sidebar a {
+  display: block;
+  padding: 0.3rem 0 0.3rem 0.75rem;
+  border-left: 3px solid transparent;
+  font-family: var(--heading);
+  font-size: 1rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+.sidebar a:hover { color: var(--ink); border-left-color: var(--gust); }
+.side-note {
+  margin: 1.25rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+main {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 2rem clamp(1.25rem, 4vw, 2.5rem);
+}
+main section + section {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+main h2 {
+  margin: 0 0 0.75rem;
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: 1.75rem;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+main h3 {
+  margin: 1.5rem 0 0.4rem;
+  font-family: var(--heading);
+  font-size: 1.15rem;
+  color: var(--blue);
+}
+main p { margin: 0 0 1rem; max-width: 66ch; }
+.lead { font-size: 1.3rem; line-height: 1.55; font-weight: 600; }
+strong { color: var(--blue); }
+
+main ul { padding-left: 1.2rem; max-width: 66ch; }
+main li { margin-bottom: 0.4rem; }
+main li::marker { color: var(--gust); }
+.parts { list-style: none; padding: 0; }
+.parts li { padding-left: 0.9rem; border-left: 3px solid var(--gust); }
+
+blockquote {
+  margin: 1.25rem 0;
+  padding: 0.5rem 0 0.5rem 1.25rem;
+  border-left: 4px solid var(--blue);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 56ch;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-family: var(--heading);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ---------- Accessibility & responsive ---------- */
+a:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+html { scroll-behavior: smooth; }
+section { scroll-margin-top: 1rem; }
+
+@media (max-width: 760px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+  .sidebar ul { display: flex; flex-wrap: wrap; gap: 0 1rem; }
+  .side-note { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .blades { animation: none; }
+  html { scroll-behavior: auto; }
+}
